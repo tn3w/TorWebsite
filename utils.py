@@ -94,9 +94,6 @@ def is_obj_in_gitignore(gitignore_content: str, obj: str) -> bool:
     :param gitignore_content: The content of the Gitignore file as a string.
     :param file_path: The path of the object to check for being ignored.
     """
-
-    if gitignore_content == "":
-        return False
     gitignore_content += "\n.git\n.gitignore"
 
     for ignorance in gitignore_content.split("\n"):
