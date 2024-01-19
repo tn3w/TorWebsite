@@ -167,6 +167,7 @@ def zip_download(directory_path: str) -> send_file:
 
     in_memory_buffer = BytesIO()
     with zipfile.ZipFile(in_memory_buffer, 'a', zipfile.ZIP_DEFLATED, False) as zipf:
+        this_directory_path = directory_path
         def add_all_files_to_zip(directory_path: str):
             all_objs = os.listdir(directory_path)
 
@@ -179,7 +180,7 @@ def zip_download(directory_path: str) -> send_file:
                 obj_path = os.path.join(directory_path, obj)
                 if not is_obj_in_gitignore(gitignore_content, obj):
                     if os.path.isfile(obj_path):
-                        zipf.write(obj_path, os.path.relpath(obj_path, directory_path))
+                        zipf.write(obj_path, os.path.relpath(obj_path, this_directory_path))
                     else:
                         add_all_files_to_zip(obj_path)
 
