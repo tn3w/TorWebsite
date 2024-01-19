@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attention</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #000;
+                color:#fff;
+            }
+
+            #warning-container {
+                text-align: center;
+            }
+
+            #warning-icon {
+                font-size: 92px;
+            }
+
+            #warning-text {
+                margin-top: 10px;
+                max-width: 500px;
+            }
+
+            #buttons-container {
+                margin-top: 20px;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+
+            #back-button {
+                background-color: green;
+                color: white;
+            }
+
+            #continue-button {
+                background-color: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="warning-container">
+            <div id="warning-icon">⚠️</div>
+            <div id="warning-text">
+                <h3>Attention: Redirecting to Clearnet Page</h3>
+                <p>
+                    You are about to be redirected to the Clearnet page "GitHub." As a Tor user, this may compromise your anonymity. Are you sure you want to continue?
+                </p>
+            </div>
+            <div id="buttons-container">
+                <a href="/" class="button" id="back-button">Back</a>
+                <a href="https://github.com/tn3w" class="button" id="continue-button">Continue</a>
+            </div>
+        </div>
+    </body>
+</html>

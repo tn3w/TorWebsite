@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html style="color-scheme: dark;" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>I am TN3W</title>
+        <style>
+            :root {
+                --background: #fff;
+                --text: #333;
+            }
+
+            [data-theme="dark"] {
+                --background: #000;
+                --text: #fff;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--background);
+                color: var(--text);
+                overflow-x: hidden;
+            }
+
+            a {
+                color: var(--text);
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;  
+            }
+
+            header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .logo-container {
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            nav {
+                display: flex;
+                margin-left: auto;
+                margin-right: 50px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                margin-right: 20px;
+            }
+
+            nav li {
+                margin: 0 15px;
+            }
+
+            .theme-switcher {
+                cursor: pointer;
+                margin-right: 20px;
+            }
+
+            main {
+                text-align: center;
+                padding: 50px;
+            }
+
+            .profile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+
+            .about-me {
+                line-height: 1.6;
+            }
+
+            footer {
+                margin-top: auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 10px;
+            }
+            
+            @media (max-width: 460px) {
+                header {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .logo-container {
+                    order: 1;
+                }
+
+                .theme-switcher {
+                    display: none;
+                }
+
+                nav {
+                    order: 2;
+                    margin: auto;
+                }
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                const themeChanger = document.getElementById("theme_changer");
+                const themeSvg = document.getElementById('theme_svg');
+                const rootElement = document.documentElement;
+
+                themeChanger.addEventListener('click', function() {
+                    const isDarkTheme = rootElement.getAttribute('data-theme') === 'dark';
+
+                    if (isDarkTheme) {
+                        rootElement.style.colorScheme = 'light';
+                        rootElement.setAttribute('data-theme', 'light');
+                        themeSvg.setAttribute('d', 'M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z');
+                    } else {
+                        rootElement.style.colorScheme = 'dark';
+                        rootElement.setAttribute('data-theme', 'dark');
+                        themeSvg.setAttribute('d', 'M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z');
+                    }
+                });
+
+                const initialTheme = rootElement.getAttribute('data-theme');
+                const initialThemeIcon = initialTheme === 'dark' ? 'M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z'
+                    : 'M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z';
+
+                themeSvg.setAttribute('d', initialThemeIcon);
+            };
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <a href="/">
+                    <div class="logo">TN3W</div>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/github" target="_blank">Github</a></li>
+                </ul>
+            </nav>
+            <div id="theme_changer" class="theme-switcher">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path id="theme_svg" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+                </svg>                                             
+            </div>
+        </header>
+        
+        <main>
+            <h1>What we achieve today will be thanked tomorrow.</h1>
+            <div class="profile">
+                <img src="data:image/webp;base64,UklGRrwEAABXRUJQVlA4ILAEAADwGQCdASpzAHMAPp1MnkwlpCKiIxqqeLATiWkGgXi17nyjnRaZNN8kP1P7BvSsH+q40BnLPh5sBcSJ2OE/4G/p1CpLmI+gk+W4zzrjssrkgCxmvQELCR/eByHvHXBlJq0eIkhXZIeB5k0Ka3PxtVbsL3XZC9z3BxLgS3q2SXWp2+q0S0x/f39v4v8ZJYRh4lOqJk2bImhtcfT2m6fJK7Lw/ugOjz9WrWlqRZuLXQ/0MIzy/6aA8ePQxMxU/5Kz5VOk5Yh7GylsVNMEPASEWGscdjldiHJMqgAA/vjyZNteN7z2ZmIL3hJQJAWdRGvzZ/02zXaaEXQRNVA/c0CLLl++Ef7I0xNExZeR1xdnybNgWt+JbmwxmDPeNxNYSOFpDOxH8LyksDPKtvz1NsJRthNZ9xVx2OcdjnZxOxM9nBY3UPCAivHd/EAtGxbwJoeUuZa7PAdsDW6Stjy5x3d88AZHBvDehak7qy7fcPmLng1h2P5h4F4NignJhzoZWnhMiGq9fOyRzDvUKvve527alNAmjTlG9wnapwb2a/jSSALb/dL7zxKfB08xxm+uj+3l9CBc9V3Zle2/UM1+Pd5v9OBcuAt4taoZvuwfxYKbniTPzVM9qzPCNT/Hwdo/Xuxf+Js7UdcQGPU7iMu7a3QAYDEmPdA+AZiDDTett+R47y4I84Tjf8Vo6nGTuV5ZlzNp3LD4Tef+rUJiRYEl+L0nbrXhKtnUR6uDr3/c3gaKl7VXaffdlK8+1sagsjfjrHWbBT4vCpWTwKKlLl5yPJ4Khu5NsXtPdlMCt+HajoIOSvJWiHkGZGnrxN3ziP+qZM6m1utSt7c1NPoMkBOT2kPfY5zIh/jVgryO333xCpxMv9j+/zPb0YkZH8owYr2eK4aMPXt7ks5cso5e/8NRDCOtECnI6oF0dXHIZsC1g7ONJAZJR5CEuthJq0HwRrS+togNcDGP0IkQcVQmxhbHmBNbHbg7FGFQ+Wi5LpBG2x+PgZLj5Jh4SIn/lI+3SQ+g0/oWV0iOftHp8N3aerKoUoQWXPf6N1qY6vNBpvfiwA0elUwyR1YkxvaX7eRW0bBmSijrYPGZ/NEBEVyJXE9PcTtfiNJhyaxpge65eLS5nDFXENnvqiBiZdC332VH1ak6G1KUZEaZa/nx6csdfzBujeb18RCePIdl06zYFR3UcZgNdzV83+3m0Ip50DscA/SGMVmhhU8GkHXzYUBwVQuz9B8JdSNIlyJrw7R9OReju+xsLg1aL3677ZWbFS4fuobniOKIuIsnFWRySHJBaliUJXjV9DXFD2iAv7QOHb1a2OVivFVnXbLgQ6miyo0aXAJhxOUzzHT3vCYIuWVcahOEqU6YqtJflET0sLE/h6i1/pIZ4dLimr9umRfCD5pUtwq4PdV0TNye0civ9prZ6einvcszQRVXT4frDdxjWFiu9AwWg3gBJDq0wl9DNp1BaztYH96FkFs4sLRoS+ErlOukAyumVzRTW/R1uEQus/b7awBRFhoXfGxY1g85ryRt5ZPB09baA7UAUctNAZiMc3jOhIlpXFkUPuzHF4n9IQLIFe1NKOM6LBNhskcEyvCqBFQFsAGIAAA=" alt="Profile Picture">
+                <p>TN3W</p>
+            </div>
+            <p class="about-me">
+                I am TN3W, a dedicated software programmer, and I engage in programming as a passionate hobby during my spare time. Python is the cornerstone of my programming journey, allowing me to weave intricate solutions and develop efficient algorithms. Additionally, I am well-versed in HTML, CSS, and JavaScript, using these languages to create captivating and functional web applications that merge artistry with usability. Fascinated by the enigmatic realms of TOR, encryption, and hacking, I immerse myself in understanding the complexities of data security and the clandestine world of encrypted domains. My interest in hacking is not to breach systems but to enhance my knowledge and fortify digital security measures. In addition to my love for programming, I have a deep passion for computer games. This affection is mirrored in my enthusiasm for creating game-related applications, where I blend my programming skills with my gaming interests. For me, programming extends beyond mere functionality. I firmly believe in adhering to the principles of usability and clean coding practices. Every program I develop is not just meant to work flawlessly but is also crafted with an emphasis on an elegant, minimalist codebase that reflects my commitment to simplicity and efficiency. My dedication to programming extends to refining my skills constantly. I engage in continuous learning, exploring new techniques, languages, and methodologies to hone my craft. Embracing the philosophy of simplicity, I strive to design programs that not only function seamlessly but also possess an aesthetic appeal, making the user experience intuitive and delightful. My coding style involves a meticulous approach, where I emphasize both the usability of the program and the clarity of the underlying code. I endeavor to create software that is user-friendly and easy to comprehend for fellow developers. The challenge of solving problems through programming stimulates my creativity, pushing me to think innovatively to craft robust and elegant solutions. Exploring the multifaceted world of programming allows me to continuously evolve and adapt to new technologies and trends in the industry. I am driven by a passion for elegant and efficient programming, focusing on delivering solutions that are not just functional but also beautifully crafted in their simplicity and usability.
+            </p>
+        </main>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="/cat">Cat</a>
+                <a href="/public-key.asc" target="_blank">PGP Key</a>
+                <a href="mailto:tn3wA8xxfuVMs2@proton.me">Contact</a>
+            </div>
+        </footer>
+    </body>
+</html>
