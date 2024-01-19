@@ -172,7 +172,7 @@ def zip_download(directory_path: str) -> send_file:
 
             gitignore_content = ""
             if ".gitignore" in all_objs:
-                with open(os.path.join(directory_path), "r", encoding = "utf-8") as readable_file:
+                with open(os.path.join(directory_path, ".gitignore"), "r", encoding = "utf-8") as readable_file:
                     gitignore_content = readable_file.read()
 
             for obj in all_objs:
