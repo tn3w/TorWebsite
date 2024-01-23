@@ -29,7 +29,7 @@ A. Use git
     python3 -m venv .venv
     .venv/bin/python -m pip install -r requirements.txt
     ```
- 4. Launch TorWebsite
+ 4. Launch
     ```bash
     python3 main.py
     ```
@@ -61,7 +61,7 @@ B. (Recommended for TOR users) Install via ZIP
     python3 -m venv .venv
     .venv/bin/python -m pip install -r requirements.txt
     ```
- 5. Launch CipherChat
+ 5. Launch
     ```bash
     python3 main.py
     ```
